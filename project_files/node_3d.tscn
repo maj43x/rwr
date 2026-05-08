@@ -4,10 +4,10 @@
 [ext_resource type="PackedScene" uid="uid://b0wqygk1w7jxx" path="res://assets/models/Hand_Nails_L.gltf" id="2_a0tk4"]
 [ext_resource type="PackedScene" uid="uid://b8mxki7letwm6" path="res://assets/models/Hand_Nails_R.gltf" id="3_r3fl7"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_noarx"]
+[sub_resource type="BoxMesh" id="BoxMesh_a0tk4"]
 size = Vector3(0.1, 0.1, 0.1)
 
-[sub_resource type="BoxMesh" id="BoxMesh_a0tk4"]
+[sub_resource type="BoxMesh" id="BoxMesh_r3fl7"]
 size = Vector3(0.1, 0.1, 0.1)
 
 [node name="Node3D" type="Node3D" unique_id=1127612317]
@@ -18,27 +18,30 @@ script = ExtResource("1_a202f")
 [node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D" unique_id=1358311487]
 
 [node name="LeftController" type="XRController3D" parent="XROrigin3D" unique_id=1903119435]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1166969, 0, 0)
 tracker = &"left_hand"
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="XROrigin3D/LeftController" unique_id=1393706069]
-mesh = SubResource("BoxMesh_noarx")
 
 [node name="HandLeftRoot" type="Node3D" parent="XROrigin3D/LeftController" unique_id=261199056]
 
-[node name="Hand_Nails_L" parent="XROrigin3D/LeftController/HandLeftRoot" unique_id=984352066 instance=ExtResource("2_a0tk4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.11755179, 0, 0)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="XROrigin3D/LeftController/HandLeftRoot" unique_id=1694877218]
+
+[node name="Hand_Nails_L" parent="XROrigin3D/LeftController/HandLeftRoot/MeshInstance3D" unique_id=984352066 instance=ExtResource("2_a0tk4")]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="XROrigin3D/LeftController" unique_id=257600210]
+mesh = SubResource("BoxMesh_a0tk4")
 
 [node name="RightController" type="XRController3D" parent="XROrigin3D" unique_id=1941350053]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11335772, 0, 0)
 tracker = &"right_hand"
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="XROrigin3D/RightController" unique_id=237285867]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.005587671, 0, 0)
-mesh = SubResource("BoxMesh_a0tk4")
 
 [node name="HandRightRoot" type="Node3D" parent="XROrigin3D/RightController" unique_id=918753362]
 
-[node name="Hand_Nails_R" parent="XROrigin3D/RightController/HandRightRoot" unique_id=39150866 instance=ExtResource("3_r3fl7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11257467, 0, 0)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="XROrigin3D/RightController/HandRightRoot" unique_id=667368242]
+
+[node name="Hand_Nails_R" parent="XROrigin3D/RightController/HandRightRoot/MeshInstance3D" unique_id=39150866 instance=ExtResource("3_r3fl7")]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="XROrigin3D/RightController" unique_id=925316849]
+mesh = SubResource("BoxMesh_r3fl7")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=327839982]
 
