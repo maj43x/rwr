@@ -87,19 +87,13 @@ func _on_left_controller_button_released(button: String) -> void:
   print ("Button release: " + button)
 
 func _process(_delta: float) -> void:
-    # 1. Sprawdzamy czy interfejs istnieje i działa
-    if webxr_interface and webxr_interface.is_initialized():
-        var proj_left = webxr_interface.get_projection_for_view(0)
-        var proj_right = webxr_interface.get_projection_for_view(1)
-        
-        # 2. Jeśli macierze są puste, przerywamy klatkę (zabezpieczenie)
-        if proj_left == Projection() or proj_right == Projection():
-            return
 
-    # 3. Odczyt pozycji analogu (Twój stary kod)
-    var thumbstick_vector: Vector2 = $XROrigin3D/LeftController.get_vector2("thumbstick")
-    if thumbstick_vector != Vector2.ZERO:
-        print ("Left thumbstick position: " + str(thumbstick_vector))
+  var thumbstick_vector: Vector2 = $XROrigin3D/LeftController.get_vector2("thumbstick")
+
+  if thumbstick_vector != Vector2.ZERO:
+
+    print ("Left thumbstick position: " + str(thumbstick_vector))
+    
 func _webxr_on_select(input_source_id: int) -> void:
   print("Select: " + str(input_source_id))
 
