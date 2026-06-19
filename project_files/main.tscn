@@ -313,6 +313,7 @@ script = ExtResource("1_2h1pa")
 script = ExtResource("2_lquwl")
 
 [node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D" unique_id=87452628]
+current = true
 
 [node name="LeftController" type="XRController3D" parent="XROrigin3D" unique_id=483040678]
 tracker = &"left_hand"
